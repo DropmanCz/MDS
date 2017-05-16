@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a3db9031-1c10-40a9-bceb-6a08a9b69382" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://brmigp01:81/Service/Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="c89bba5e-4ef7-4db3-9f04-a88063eef28d" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?disco" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="5d2d4f67-26e8-4a57-b8e2-5a2b7eb46798" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="b6df587a-bc6f-4783-912b-7652fd7c395c" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="fee39d2e-42ef-46f9-8607-24b7c98e84a1" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="7e64abe5-7801-4dc2-ae28-74f88c77a426" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service4.xsd" MetadataType="Schema" ID="e8a2afe2-6b1b-4b74-87f5-0d1162776950" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="a74025e1-af86-4d2f-85ae-1875ebb33375" SourceId="1" SourceUrl="http://brmigp01.w2k.feico.com:81/Service/Service.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

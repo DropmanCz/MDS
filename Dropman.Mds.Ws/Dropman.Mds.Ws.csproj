@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F012FE73-11FA-4310-BB3E-BB53D410C0C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dropman.Mds.Ws</RootNamespace>
+    <AssemblyName>Dropman.Mds.Ws</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MdsAttributeNameAttribute.cs" />
+    <Compile Include="AttributesNotSetException.cs" />
+    <Compile Include="ConnectionProvider.cs" />
+    <Compile Include="IEntityMember.cs" />
+    <Compile Include="MdsEntityAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\MasterDataServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Dropman.Mds.Ws.cd" />
+    <None Include="packages.config" />
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.Annotation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.AnnotationsCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.AnnotationsDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.AnnotationsUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.AttributeChangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.BusinessRules.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.BusinessRulesCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.BusinessRulesGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.BusinessRulesPalette.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.BusinessRulesPaletteGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.Changeset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityInstalledStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityKnowledgeBasesGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityOperationCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityOperationPurgeOperationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityOperationResultsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityOperationStartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityOperationStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.DataQualityStoreInputDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberAnnotationDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberAnnotationSaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberAnnotationsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberAttributesGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberChangesetDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberChangesetSaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberChangesetsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberHistoryRollbackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMemberKeyGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersCopyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersMergeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersPurgeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityMembersUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityStagingBatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityStagingClearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityStagingGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityStagingLoadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityStagingProcessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.EntityValidationSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ErrorLogsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ExportView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ExportViewCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ExportViewDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ExportViewListGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ExportViewUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.FileAttribute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.FileGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.FileSaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.HierarchyMembers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.HierarchyMembersGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.HierarchyParentSaveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.Identifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.Knowledgebase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MemberIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MemberKey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.Metadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MetadataCloneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MetadataCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MetadataDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MetadataGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.MetadataUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ModelMembersGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.OperationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.OperationStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ReplacementId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SecurityCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SecurityPrincipals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SecurityPrincipalsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SecurityPrivileges.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SecurityPrivilegesGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SecuritySet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ServiceVersionGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.StagingNameCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SyncRelationship.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SyncRelationshipDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SyncRelationshipMergeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SyncRelationshipRefreshResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SyncRelationshipsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemDomainList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemDomainListGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemPropertiesGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemPropertyValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemSettingGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemSettingsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.SystemSettingsUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.TabularData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.Transaction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.TransactionAnnotationsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.TransactionsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.TransactionsReverseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.UserEffectiveObjectPermissionsGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.UserPreferencesDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.UserPreferencesGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.UserPreferencesUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ValidationError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ValidationGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ValidationIssue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ValidationProcessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ValidationProcessResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.ValidationSummaryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Dropman.Mds.Ws.MasterDataServices.VersionCopyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MasterDataServices\Service.wsdl" />
+    <None Include="Service References\MasterDataServices\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MasterDataServices\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MasterDataServices\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MasterDataServices\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MasterDataServices\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MasterDataServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MasterDataServices\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MasterDataServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MasterDataServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MasterDataServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
